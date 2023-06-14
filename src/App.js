@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDotsVisible(true);
-    }, 2000);
+    }, 0);
 
     return () => clearTimeout(timeout);
   }, []);

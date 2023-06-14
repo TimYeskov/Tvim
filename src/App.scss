@@ -13,33 +13,43 @@
 }
 #root {
   .App {
-    animation: fade-in 2s;
+    animation: fade-in 3s;
+    margin: 0 auto;
 
-    margin-top: 120px;
-    padding: 0 100px;
-    @media (max-width: 450px) {
-      padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    @media (max-width: 1000px) {
+      padding: 0;
     }
 
     h1 {
       font-size: 50px;
-      @media (max-width: 820px) {
-        font-size: 50px !important;
+
+      @media (max-width: 1000px) {
+        font-size: 45px;
       }
-      @media (max-width: 700px) {
-        font-size: 40px !important;
+      @media (max-width: 800px) {
+        font-size: 40px;
       }
-      @media (max-width: 550px) {
-        font-size: 20px !important;
+      @media (max-width: 650px) {
+        font-size: 35px;
       }
 
-      @media (max-width: 400px) {
-        font-size: 20px !important;
-        margin-left: 20px !important;
+      @media (max-width: 550px) {
+        font-size: 30px;
+      }
+      @media (max-width: 450px) {
+        font-size: 25px;
+      }
+      @media (max-width: 350px) {
+        font-size: 20px;
       }
       @media (max-width: 300px) {
-        font-size: 13px !important;
-        margin-left: 20px !important;
+        font-size: 15px;
       }
     }
 
@@ -53,48 +63,47 @@
 
       // max-width: 1100px;
       .logo {
-        //   width: 81%;
+        //  : 81%;
 
         margin-right: 20px;
-        @media (max-width: 550px) {
+        @media (max-width: 1000px) {
           width: 600px;
         }
-        @media (max-width: 450px) {
+        @media (max-width: 800px) {
           width: 500px;
         }
-        @media (max-width: 350px) {
+        @media (max-width: 650px) {
           width: 400px;
+        }
+
+        @media (max-width: 550px) {
+          width: 300px;
+          margin-right: 13px;
+        }
+        @media (max-width: 450px) {
+          width: 250px;
+          margin-right: 10px;
+        }
+        @media (max-width: 350px) {
+          width: 200px;
+          margin-right: 8px;
+        }
+        @media (max-width: 300px) {
+          width: 170px;
+          margin-right: 7px;
         }
       }
 
       .dot-container {
-        //   position: absolute;
-        //   //   margin-top: 240px;
-        //   bottom: 0;
-        //   right: 0;
-        //   width: fit-content;
-        //   height: fit-content;
         align-items: flex-end;
         display: flex;
-        //   @media (max-width: 1024px) {
-        //     top: 225px;
-        //   }
-        //   @media (max-width: 820px) {
-        //     top: 171px;
-        //   }
-        //   @media (max-width: 768px) {
-        //     top: 157px;
-        //   }
       }
 
       .dot1 {
         width: 55px;
         height: auto;
-        //   margin-right: 350px;
 
-        //   transition-delay: 0.2s;
-        animation-delay: 0.5s;
-        animation: dotFadeIn 1.5s ease-in-out infinite;
+        animation: dot1FadeInOut 2s ease-in-out infinite;
         opacity: 0;
       }
 
@@ -102,34 +111,88 @@
         width: 55px;
         height: auto;
         //   transition-delay: 0.2s;
-        animation-delay: 1s;
-        animation: dotFadeIn 1.5s ease-in-out infinite;
+
+        animation: dot2FadeInOut 2s ease-in-out infinite;
         opacity: 0;
         padding-left: 20px;
+        @media (max-width: 550px) {
+          padding-left: 13px;
+        }
+        @media (max-width: 450px) {
+          padding-left: 10px;
+        }
+        @media (max-width: 350px) {
+          padding-left: 8px;
+        }
       }
-    }
+      .dot1,
+      .dot2 {
+        @media (max-width: 1000px) {
+          width: 50px;
+          padding-bottom: 1px;
+        }
+        @media (max-width: 800px) {
+          width: 40px;
+        }
+        @media (max-width: 650px) {
+          width: 31px;
+        }
 
-    h1 {
-      font-weight: 700;
-      font-size: 70px;
-      text-align: center;
-      margin-left: 70px;
-    }
-    @media (max-width: 1200px) {
-      left: 0;
+        @media (max-width: 550px) {
+          width: 24px;
+        }
+        @media (max-width: 450px) {
+          width: 19px;
+        }
+        @media (max-width: 350px) {
+          width: 17px;
+          padding-bottom: 0;
+        }
+        @media (max-width: 300px) {
+          width: 14px;
+        }
+      }
     }
   }
 
-  @keyframes dotFadeIn {
+  @keyframes dot1FadeInOut {
     0% {
       opacity: 0;
     }
-    50% {
+    10% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes dot2FadeInOut {
+    0% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 0;
+    }
+    55% {
+      opacity: 1;
+    }
+    90% {
       opacity: 1;
     }
     100% {
       opacity: 0;
     }
+  }
+  .dot1,
+  .dot2 {
+    animation-delay: 0s, 2s; /* Добавляем задержку для синхронной повторной анимации */
   }
   .App.animation-started .dot {
     opacity: 1;
